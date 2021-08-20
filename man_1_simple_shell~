@@ -1,4 +1,0 @@
-.SH NAME
-Command line interpreter
-.SH SYNOPSIS
-The shell is executed by typing ./hsh
