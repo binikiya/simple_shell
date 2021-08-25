@@ -1,0 +1,30 @@
++.SH NAME
+Command line interpreter
+.SH SYNOPSIS
+The shell is executed by typing ./hsh
+.br
+Then, it will wait for an input such as: command [argument][other]
+.SH DISCREPTION
+This shell project is dedicated to our studies.
+.SH EXAMPLES
+.B Two ways to execute our shell
+.br
+.B The interactive mode:
+.br
+$ ./hsh
+.br
+#cisfun$ /bin/ls
+.br
+hsh main.c shell.c
+.br
+#cisfun$ exit
+.br
+$
+.br
+.B The non-interactive mode:
+.br
+$ echo "bin/ls" | .hsh
+.br
+hsh main.c shell.c
+.SH AUTHOR
+Biniyam Tamene, Abebe Tesfaye
