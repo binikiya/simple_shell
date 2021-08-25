@@ -36,7 +36,7 @@ int _strlen(const char *s)
  *
  * Return: Pointer to dest
  */
-int *_strcpy(char *dest, const char *src)
+char *_strcpy(char *dest, const char *src)
 {
   size_t i;
 
@@ -54,7 +54,7 @@ int *_strcpy(char *dest, const char *src)
  * Return: Concatenated string
  */
 
-int *_strcat(char *dest, const char *src)
+char *_strcat(char *dest, const char *src)
 {
   char *destTemp;
   const char *srcTemp;
@@ -77,7 +77,7 @@ int *_strcat(char *dest, const char *src)
  * Return: Pointer to destination string
  */
 
-int _strncat(char *dest, const char *src, size_t n)
+char *_strncat(char *dest, const char *src, size_t n)
 {
   size_t dest_len = _strlen(dest);
   size_t i;

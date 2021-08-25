@@ -8,7 +8,7 @@
 
 int token_len(char *str, char *delim);
 int count_tokens(char *str, char *delim);
-int **_strtok(char *line, char *delim);
+char **_strtok(char *line, char *delim);
 
 /**
  * token_len - Locates the delimeter index
@@ -63,7 +63,7 @@ int count_tokens(char *str, char *delim)
  * 
  * Return: A pointer to an array containing the tokenized word
  */
-int **_strtok(char *line, char *delim)
+char **_strtok(char *line, char *delim)
 {
   char **ptr;
   int index = 0, tokens, t, letters, l;
@@ -72,6 +72,10 @@ int **_strtok(char *line, char *delim)
   if (tokens == 0)
     return (NULL);
 
+  ptr = malloc(sizeof(char *) * (tokens + 2));
+  if (!ptr)
+    return (NULL);
+  
   for (t = 0; t < tokens; t++)
     {
       while (line[index] == *delim)

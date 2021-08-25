@@ -18,7 +18,7 @@ void sig_handler(int sig)
   char *new_prompt = "\n$ ";
 
   (void)sig;
-  signal(SIGNAL, sig_handler);
+  signal(SIGINT, sig_handler);
   write(STDIN_FILENO, new_prompt, 3);
 }
 
@@ -30,7 +30,7 @@ void sig_handler(int sig)
  * Return: If an error occurs - a corresponding error code.
  *         O/w - The exit value of last executed command
  */
-int execute(char **args, char *front)
+int execute(char **args, char **front)
 {
   pid_t child_pid;
   int status, flag = 0, ret = 0;
@@ -87,7 +87,7 @@ int execute(char **args, char *front)
  *
  * Return: The return value of the last executed command.
  */
-int main(int argc, char argv[])
+int main(int argc, char *argv[])
 {
   int ret = 0, retn;
   int *exe_ret = &retn;
@@ -96,7 +96,7 @@ int main(int argc, char argv[])
   name = argv[0];
   hist = 1;
   aliases = NULL;
-  signal(SIGNAL, sig_handler);
+  signal(SIGINT, sig_handler);
 
   *exe_ret = 0;
   environ = _copyenv();

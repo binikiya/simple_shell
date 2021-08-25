@@ -6,9 +6,9 @@
 
 #include "shell.h"
 
-char get_args(char *line, int *exe_ret);
+char *get_args(char *line, int *exe_ret);
 int call_args(char **args, char **front, int *exe_ret);
-int run_args(char **args, char *front, int *exe_ret);
+int run_args(char **args, char **front, int *exe_ret);
 int handle_args(int *exe_ret);
 int check_args(char **args);
 
@@ -20,7 +20,7 @@ int check_args(char **args);
  * Return: If an error occurs - NULL
  *         Otherwise - a pointer to a stored command.
  */
-char get_args(char *line, int *exe_ret)
+char *get_args(char *line, int *exe_ret)
 {
   size_t n = 0;
   ssize_t read;
@@ -111,7 +111,7 @@ int call_args(char **args, char **front, int *exe_ret)
  *
  * Return: The return value of last executed command.
  */
-int run_args(char **args, char **front, int exe_ret)
+int run_args(char **args, char **front, int *exe_ret)
 {
   int ret, i;
   int (*builtin)(char **args, char **front);
@@ -168,7 +168,7 @@ int handle_args(int *exe_ret)
 
   for (index = 0; args[index]; index++)
     {
-      if (_strncmp(args[index], ';', 1) == 0)
+      if (_strncmp(args[index], ";", 1) == 0)
 	{
 	  free(args[index]);
 	  args[index] = NULL;

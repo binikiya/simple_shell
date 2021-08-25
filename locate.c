@@ -91,15 +91,15 @@ char *fill_path_dir(char *path)
 	  if (i == 0)
 	    {
 	      _strcat(path_copy, pwd);
-	      _strcat(path_copy, ':');
+	      _strcat(path_copy, ":");
 	    }
 	  else if (path[i + 1] == ':' || path[i + 1] == '\0')
 	    {
-	      _strcat(path_copy, ':');
+	      _strcat(path_copy, ":");
 	      _strcat(path_copy, pwd);
 	    }
 	  else
-	    _strcat(path_copy, ':');
+	    _strcat(path_copy, ":");
 	}
       else
 	{
