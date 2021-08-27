@@ -6,9 +6,6 @@
 
 #include "shell.h"
 
-void sig_handler(int sig);
-int execute(char **args, char **front);
-
 /**
  * sig_handler - Prints a new prompt up on a signal.
  * @sig: The signal
