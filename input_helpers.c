@@ -1,9 +1,3 @@
-/*
- * File: input_helpers.c
- * Auth: Abebe Tesfaye
- *       Biniyam Tamene
- */
-
 #include "shell.h"
 
 /**
